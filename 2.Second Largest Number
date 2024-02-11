@@ -1,0 +1,35 @@
+vector<int> getSecondOrderElements(int n, vector<int> a) {
+    // Write your code here.
+
+    int largest = INT_MIN;
+
+    for(int i=0 ; i<n ;i++){
+        if(a[i]>largest){
+            largest=a[i];
+        }
+    }
+
+    int secondLargest = INT_MIN;
+    for(int i=0 ; i<n ;i++){
+        if(a[i]>secondLargest && a[i] != largest ){
+            secondLargest = a[i];
+        }
+    }
+    int smallest = INT_MAX;
+
+    for(int i=0 ; i<n ;i++){
+        if(a[i]<smallest){
+            smallest=a[i];
+        }
+    }
+
+    int secondSmallest = INT_MAX;
+    for(int i=0 ; i<n ;i++){
+        if(a[i]<secondSmallest && a[i] != smallest ){
+            secondSmallest = a[i];
+        }
+    }
+
+    
+    return {secondLargest,secondSmallest};
+}
